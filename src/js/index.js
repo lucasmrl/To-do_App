@@ -7,8 +7,8 @@ import Todo_Item from './models/To_do'
  *  - All the deleted to-do items
  */
 const activeState = [];
-// const completedState = [];
-// const deletedState = [];
+const completedState = [];
+const deletedState = [];
 
 const newTodoItem = () => {
     // 1) Get the input from the UI
