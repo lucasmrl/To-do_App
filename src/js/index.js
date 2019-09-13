@@ -10,26 +10,37 @@ const activeState = [];
 const completedState = [];
 const deletedState = [];
 
-// window.addEventListener('load', () => {
-//     localStorage.removeItem('loglevel');
-//     localStorage.removeItem('loglevel:webpack-dev-server');
+window.addEventListener("load", () => {
+  const testAct = localStorage.getItem("active");
+  const testDel = localStorage.getItem("deleted");
+  const testComp = localStorage.getItem("completed");
 
-//     if (localStorage){
-//         const newArray = JSON.parse(localStorage.getItem('active'));
-//         newArray.forEach(el => activeState.push(el)); 
-//         activeState.forEach(el => todoView.displayItem(el));
+  if (testAct !== null) {
+    JSON.parse(localStorage.getItem("active")).forEach(el => {
+      todoView.displayItem(el);
+      activeState.push(el);
+    });
+  }
 
-//         const newArrayDeleted = JSON.parse(localStorage.getItem('deleted'));
-//         console.log(newArrayDeleted);
-//         newArrayDeleted.forEach(el => deletedState.push(el)); 
-//         deletedState.forEach(el => todoView.addToDeleteList(el));
+  if (testDel !== null) {
+    JSON.parse(localStorage.getItem("deleted")).forEach(el => {
+      todoView.addToDeleteList(el);
+      deletedState.push(el);
+    });
+  }
 
-//         const newArrayCompleted = JSON.parse(localStorage.getItem('completed'));
-//         newArrayCompleted.forEach(el => completedState.push(el)); 
-//         completedState.forEach(el => todoView.addToCompletedList(el));
-//     };
+  if (testComp !== null) {
+    JSON.parse(localStorage.getItem("completed")).forEach(el => {
+      todoView.addToCompletedList(el);
+      completedState.push(el);
+    });
+  }
+});
 
-// });
+document.querySelector(".badge-danger").addEventListener("click", () => {
+  localStorage.clear();
+  location.reload();
+});
 
 /* Active To-Do Items
  */
@@ -49,6 +60,10 @@ const newTodoItem = () => {
 
     // 4) Use the object just created to display in the UI
     todoView.displayItem(newItem);
+
+    // Saves every new active item to the Local Storage
+    localStorage.setItem("active", JSON.stringify(activeState));
+    console.log(activeState);
   } else {
     console.log("Type something");
   }
@@ -57,9 +72,6 @@ const newTodoItem = () => {
 document.getElementById("submit__btn").addEventListener("click", e => {
   e.preventDefault();
   newTodoItem();
-  
-  // Saves every new active item to the Local Storage
-  //localStorage.setItem('active', JSON.stringify(activeState));
 });
 
 /* Deleted Items
@@ -87,9 +99,10 @@ document.querySelector(".active_to-dos").addEventListener("click", e => {
 
     // Then I remove that object from the activeState
     activeState.splice(indexOfItem, 1);
-    // localStorage.setItem('active', JSON.stringify(activeState));
-    // localStorage.setItem('deleted', JSON.stringify(deletedState));
-
+    localStorage.setItem("active", JSON.stringify(activeState));
+    localStorage.setItem("deleted", JSON.stringify(deletedState));
+    console.log(deletedState);
+    console.log(localStorage);
   }
 });
 
@@ -118,8 +131,7 @@ document.querySelector(".active_to-dos").addEventListener("click", e => {
 
     // Then I remove that object from the activeState
     activeState.splice(indexOfItem, 1);
-    // localStorage.setItem('active', JSON.stringify(activeState));
-    // localStorage.setItem('completed', JSON.stringify(completedState));
-   
+    localStorage.setItem("active", JSON.stringify(activeState));
+    localStorage.setItem("completed", JSON.stringify(completedState));
   }
 });

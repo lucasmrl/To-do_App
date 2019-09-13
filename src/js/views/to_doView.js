@@ -7,13 +7,13 @@ export const displayItem = item => {
   const markup = `
             <div class="border rounded p-3" id=${item.id}>
             <div class="row">
-            <div class="col-sm">
+            <div class="col-2">
                 <input type="checkbox" class="form-check-input mr-3 ml-3">
             </div>
-            <div class="col-sm">
+            <div class="col-9">
                 ${item.value}
             </div>
-            <div class="col-sm">
+            <div class="col-1">
                 <i class="material-icons float-right deleteIcon">delete_forever</i>
             </div>
             </div>
