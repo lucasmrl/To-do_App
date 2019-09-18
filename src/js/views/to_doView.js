@@ -5,23 +5,21 @@ export const clearInput = () =>
 
 export const displayItem = item => {
   const markup = `
-            <div class="border rounded p-3" id=${item.id}>
-            <div class="row">
-            <div class="col-2">
-                <input type="checkbox" class="form-check-input mr-3 ml-3">
-            </div>
-            <div class="col-9">
-                ${item.value}
-            </div>
-            <div class="col-1">
-                <i class="material-icons float-right deleteIcon">delete_forever</i>
-            </div>
-            </div>
-        </div>
+            <ul id=${item.id}>
+                <li>
+                  <div class="new_test">
+                    <a href="#"><span class="dot" id="fake_check"></span></a>
+                    <p>${item.value}</p>
+                    <a href="#"
+                      ><img src="img/3 Delete btn.png" alt="" class="delete_img"
+                    /></a>
+                  </div>
+                </li>
+              </ul>
     `;
 
   document
-    .querySelector(".active_to-dos")
+    .querySelector(".active_list")
     .insertAdjacentHTML("beforeend", markup);
 };
 
@@ -55,34 +53,75 @@ const displayDate = () => {
 
 export const addToDeleteList = item => {
   const markup = `
-            <div class="deletedyay">
-            <div class="row">
-            <div class="col-9 alert alert-danger">
-                <del>${item.value}</del>
-                <small class="text-muted"><br>${displayDate()}</small>
-            </div>
-            </div>
-        </div>
+            <ul>
+                <li>
+                    <div class="new_test">
+                        <p>${item.value}</p>
+                    </div>
+                </li>
+            </ul>
     `;
 
   document
-    .querySelector(".deleted_items_list")
+    .querySelector(".deleted_list")
     .insertAdjacentHTML("beforeend", markup);
 };
 
 export const addToCompletedList = item => {
   const markup = `
-    <div class="completed_yay">
-    <div class="row">
-    <div class="col-9 alert alert-success">
-        ${item.value}
-        <small class="text-muted"><br>${displayDate()}</small>
-    </div>
-    </div>
-</div>
+            <ul>
+                   <li>
+                     <div class="new_test">
+                      <img src="img/success icon.png" alt="" class="sucess_img">
+                       <p>${item.value}</p>
+                        </div>
+                   </li>
+            </ul>
 `;
 
   document
     .querySelector(".completed_list")
     .insertAdjacentHTML("beforeend", markup);
+};
+
+export const whenActiveIsCliked = () => {
+  const active = document.querySelector(".active_list");
+  active.classList.remove("hide_me");
+
+  const completed = document.querySelector(".completed_list");
+  completed.classList.add("hide_me");
+
+  const deleted = document.querySelector(".deleted_list");
+  deleted.classList.add("hide_me");
+
+  const inputArea = document.querySelector(".input_test");
+  inputArea.classList.remove("hide_me");
+};
+
+export const whenCompletedIsCliked = () => {
+  const active = document.querySelector(".active_list");
+  active.classList.add("hide_me");
+
+  const completed = document.querySelector(".completed_list");
+  completed.classList.remove("hide_me");
+
+  const deleted = document.querySelector(".deleted_list");
+  deleted.classList.add("hide_me");
+
+  const inputArea = document.querySelector(".input_test");
+  inputArea.classList.add("hide_me");
+};
+
+export const whenDeletedIsCliked = () => {
+  const active = document.querySelector(".active_list");
+  active.classList.add("hide_me");
+
+  const completed = document.querySelector(".completed_list");
+  completed.classList.add("hide_me");
+
+  const deleted = document.querySelector(".deleted_list");
+  deleted.classList.remove("hide_me");
+
+  const inputArea = document.querySelector(".input_test");
+  inputArea.classList.add("hide_me");
 };

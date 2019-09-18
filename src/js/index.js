@@ -37,7 +37,7 @@ window.addEventListener("load", () => {
   }
 });
 
-document.querySelector(".badge-danger").addEventListener("click", () => {
+document.getElementById("delete_hist").addEventListener("click", () => {
   localStorage.clear();
   location.reload();
 });
@@ -63,7 +63,6 @@ const newTodoItem = () => {
 
     // Saves every new active item to the Local Storage
     localStorage.setItem("active", JSON.stringify(activeState));
-    console.log(activeState);
   } else {
     console.log("Type something");
   }
@@ -79,14 +78,14 @@ document.getElementById("submit__btn").addEventListener("click", e => {
  *
  */
 
-document.querySelector(".active_to-dos").addEventListener("click", e => {
+document.querySelector(".active_list").addEventListener("click", e => {
   const newItemDel = [];
 
   // Get the ID of the to-do item
-  const itemID = e.target.parentNode.parentNode.parentNode.id;
-  const reject = e.target.type;
+  const itemID = e.target.parentNode.parentNode.parentNode.parentNode.id;
+  const reject = e.target.id;
 
-  if (itemID && reject != "checkbox") {
+  if (itemID && reject != "fake_check") {
     // With the ID, I find the INDEX in the activeState of that item
     const indexOfItem = activeState.findIndex(x => x.id === itemID);
 
@@ -101,8 +100,6 @@ document.querySelector(".active_to-dos").addEventListener("click", e => {
     activeState.splice(indexOfItem, 1);
     localStorage.setItem("active", JSON.stringify(activeState));
     localStorage.setItem("deleted", JSON.stringify(deletedState));
-    console.log(deletedState);
-    console.log(localStorage);
   }
 });
 
@@ -111,14 +108,14 @@ document.querySelector(".active_to-dos").addEventListener("click", e => {
  *
  */
 
-document.querySelector(".active_to-dos").addEventListener("click", e => {
+document.querySelector(".active_list").addEventListener("click", e => {
   const newItemCompleted = [];
 
   // Get the ID of the to-do item
-  const itemID = e.target.parentNode.parentNode.parentNode.id;
-  const check = e.target.type;
+  const itemID = e.target.parentNode.parentNode.parentNode.parentNode.id;
+  const check = e.target.id;
 
-  if (itemID && check === "checkbox") {
+  if (itemID && check === "fake_check") {
     // With the ID, I find the INDEX in the activeState of that item
     const indexOfItem = activeState.findIndex(x => x.id === itemID);
 
@@ -134,4 +131,18 @@ document.querySelector(".active_to-dos").addEventListener("click", e => {
     localStorage.setItem("active", JSON.stringify(activeState));
     localStorage.setItem("completed", JSON.stringify(completedState));
   }
+});
+
+// Vertical Tab
+
+document.getElementById("active_link").addEventListener("click", () => {
+  todoView.whenActiveIsCliked();
+});
+
+document.getElementById("completed_link").addEventListener("click", () => {
+  todoView.whenCompletedIsCliked();
+});
+
+document.getElementById("deleted_link").addEventListener("click", () => {
+  todoView.whenDeletedIsCliked();
 });

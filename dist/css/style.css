@@ -1,0 +1,282 @@
+body {
+  margin: 0px;
+  background: rgb(235, 51, 73);
+  background: linear-gradient(
+      57deg,
+      rgba(235, 51, 73, 1) 0%,
+      rgba(244, 92, 67, 1) 80%
+    )
+    fixed;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  max-width: 65%;
+  height: auto;
+  padding: 40px 15px 20px 15px;
+}
+
+hr {
+  margin-bottom: 20px;
+  border: 0.5px solid #f44336;
+  border-radius: 5px;
+  opacity: 0.5;
+  width: 44%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #054a3f;
+}
+a:hover {
+  text-decoration: none;
+  color: #00947c;
+  font-weight: 500;
+}
+a:focus {
+  text-decoration: none;
+  color: #054a3f;
+}
+a:hover,
+a:active {
+  text-decoration: none;
+  color: #00947c;
+}
+
+.delete {
+  color: red;
+  font-weight: 300;
+  padding-bottom: 13px;
+}
+
+.delete a:visited {
+  text-decoration: none;
+  color: red;
+}
+.delete a:hover {
+  text-decoration: none;
+  color: red;
+}
+.delete a:focus {
+  text-decoration: none;
+  color: red;
+}
+.delete a:hover,
+.delete a:active {
+  text-decoration: none;
+  color: red;
+}
+
+.bottom_vertical {
+  align-self: center;
+  align-self: end;
+}
+
+.version {
+  color: #3e3e3e;
+  opacity: 0.5;
+}
+
+.links_menu li {
+  font-weight: 600;
+  font-size: 25px;
+  color: #054a3f;
+  padding: 15px;
+}
+
+.full_page {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 607px;
+  width: 1226px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.vertical_tab {
+  display: grid;
+  width: 32%;
+  background: #fcfaf2;
+  border-radius: 60px 0 0 60px;
+  text-align: center;
+}
+
+.main_content {
+  display: grid;
+  margin-left: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 60px 0 0;
+  background: white;
+  overflow: hidden;
+}
+
+.active_list {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 475px;
+  align-items: center;
+}
+
+.completed_list {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 475px;
+    align-items: center;
+  }
+
+  .completed_list p {
+    font-size: 26px;
+    color: #9b9b9b;
+    font-family: "Open Sans", sans-serif;
+    padding: 0px 22px 0px 30px;
+    width: 600px;
+  }
+
+  .deleted_list {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 475px;
+    align-items: center;
+  }
+
+  .deleted_list p {
+    font-size: 26px;
+    font-family: "Open Sans", sans-serif;
+    opacity: 0.5;
+    padding: 0px 22px 0px 30px;
+    width: 600px;
+    color: red;
+    text-decoration: line-through;
+  }
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.new_test {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 750px;
+  margin-bottom: -15px;
+}
+
+.active_list p {
+  font-size: 26px;
+  color: #9b9b9b;
+  font-family: "Open Sans", sans-serif;
+  padding: 0px 22px 0px 30px;
+  width: 600px;
+}
+
+.dot {
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid #9b9b9b;
+  display: inline-block;
+}
+
+.delete_img {
+  width: 75%;
+}
+
+.input_area {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  display: inline-block;
+  padding-bottom: 45px;
+  margin-top: 10px;
+}
+
+.input_test {
+  align-self: flex-end;
+  text-align: center;
+}
+
+input::placeholder {
+  font-size: 22px;
+  font-family: "Open Sans", sans-serif;
+  opacity: 0.5;
+}
+
+input[type="text"] {
+  font-size: 22px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.input_field {
+  border-radius: 60px;
+  border: 1px solid #707070;
+  padding: 20px;
+  width: 600px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+.add_btn {
+  vertical-align: middle;
+  padding-left: 10px;
+}
+
+footer {
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.footer_text {
+  color: white;
+  font-weight: 300;
+  opacity: 0.55;
+  line-height: 8pt;
+  padding-bottom: 8px;
+}
+
+.copy {
+  color: white;
+  font-size: 18px;
+  opacity: 1;
+}
+
+.hide_me{
+    display: none;
+}
