@@ -28,7 +28,7 @@ After reloading the page, the task will bring the DATE + TIME when the page was 
 
 ## Versioning
 
-v.0.5.0
+v.0.6.0
 
 ## Authors
 
