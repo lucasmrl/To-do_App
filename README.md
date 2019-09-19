@@ -1,4 +1,4 @@
-# To-do_App
+# To-do List
 
 Project of a to-do list with HTML + CSS + VanillaJS - for learning purposes.
 
