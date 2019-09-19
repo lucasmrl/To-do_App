@@ -1,7 +1,9 @@
 export const getInput = () => document.getElementById("inputTodo").value;
 
-export const clearInput = () =>
-  (document.getElementById("inputTodo").value = "");
+export const clearInput = () => {
+  document.getElementById("inputTodo").value = "";
+  document.getElementById("inputTodo").focus();
+};
 
 export const displayItem = item => {
   const markup = `
@@ -46,7 +48,7 @@ const displayDate = () => {
     var hourMinute = hours + ":" + minutes + ampm;
     return hourMinute;
   };
-  const actualTimeAndDate = `${yy}-${months[mm]}-${dd}, ${hhmm(now)}`;
+  const actualTimeAndDate = `${yy}-${months[mm]}-${dd} | ${hhmm(now)}`;
 
   return actualTimeAndDate;
 };
@@ -56,7 +58,7 @@ export const addToDeleteList = item => {
             <ul>
                 <li>
                     <div class="new_test">
-                        <p>${item.value}</p>
+                        <p>${item.value}</p><span class="date_time">${displayDate()}</span>
                     </div>
                 </li>
             </ul>
@@ -73,7 +75,7 @@ export const addToCompletedList = item => {
                    <li>
                      <div class="new_test">
                       <img src="img/success icon.png" alt="" class="sucess_img">
-                       <p>${item.value}</p>
+                       <p>${item.value}</p><span class="date_time">${displayDate()}</span>
                         </div>
                    </li>
             </ul>

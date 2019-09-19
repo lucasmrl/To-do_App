@@ -64,7 +64,7 @@ const newTodoItem = () => {
     // Saves every new active item to the Local Storage
     localStorage.setItem("active", JSON.stringify(activeState));
   } else {
-    console.log("Type something");
+    alert("You need to type a task first! =)");
   }
 };
 
