@@ -2,6 +2,8 @@
 
 Project of a to-do list with HTML + CSS + VanillaJS - for learning purposes.
 
+[Live Demo](https://todoapp01.netlify.com/) - https://todoapp01.netlify.com/
+
 ![Image of the To-Do App](https://github.com/l310301/To-do_App/blob/master/screen1.PNG?raw=true)
 
 ## Features
