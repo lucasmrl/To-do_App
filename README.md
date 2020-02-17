@@ -25,13 +25,13 @@ After reloading the page, the task will bring the DATE + TIME when the page was 
 
 ## Built With
 
-* Adobe XD for planning the UI.
+* Adobe XD.
 * HTML5/ CSS3/ Javascript
 
 ## Versioning
 
-v.0.6.0
+v.1.0.0
 
 ## Authors
 
-* **Lucas Lima** - [l310301](https://github.com/l310301)
+* **Lucas Lima** - [lucasmrl](https://github.com/luacsmrl)
