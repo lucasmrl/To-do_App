@@ -34,4 +34,4 @@ v.1.0.0
 
 ## Authors
 
-* **Lucas Lima** - [lucasmrl](https://github.com/luacsmrl)
+* **Lucas Lima** - [lucasmrl](https://github.com/lucasmrl)
