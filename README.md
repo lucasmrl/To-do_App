@@ -6,12 +6,12 @@ Project of a to-do list with HTML + CSS + VanillaJS - for learning purposes.
 
 ![Image of the To-Do App](https://github.com/l310301/To-do_App/blob/master/screen1.PNG?raw=true)
 
-## Features
+## Main Feature(s)
 
 * Input a task / Mark a task as "Completed" / "Delete" a task.
 * localStorage - The tasks will be saved even after you close/reload the page.
 
-## Next Features / Improvements:
+## Possible Improvements
 
 1. Change the style of the links (User should be able to know which tab he is in).
 2. Possibility to edit an active task.
